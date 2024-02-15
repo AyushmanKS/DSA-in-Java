@@ -2,7 +2,7 @@
 public class ChessBoard4 {
 
     public static void nQueens(char board[][], int row) {
-        // base
+        // base case
         if(row == board.length) {
             printBoard(board);
             return;
