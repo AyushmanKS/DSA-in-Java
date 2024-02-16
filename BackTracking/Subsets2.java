@@ -1,7 +1,6 @@
 // Finding subsets of a String n = 2^n
 
 public class Subsets2 {
-    
     public static void findSubsets(String str, String ans, int i) {
         // base case
         if(i == str.length()) {
