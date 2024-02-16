@@ -20,7 +20,7 @@ public class Subsets2 {
     }
 
     public static void main(String args[]) {
-        String str = "abcdefghijhijklmnopqrsuvwxyz";
+        String str = "abc";
         findSubsets(str, "", 0);
         System.out.println("all possible combinations: "+Math.pow(2, str.length()));
     }    
