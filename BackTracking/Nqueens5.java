@@ -36,7 +36,7 @@ public class Nqueens5 {
             if(isSafe(board, row, j)) {
                 board[row][j] = 'Q';
                 nQueens(board, row+1); // function call: recursion
-                board[row][j] = 'X'; // backtracking 
+                board[row][j] = '.'; // backtracking 
             }
 
         }
@@ -61,7 +61,7 @@ public class Nqueens5 {
         // initialize: create board
         for(int i=0; i<n; i++) {
             for(int j=0; j<n; j++) {
-                board[i][j] = 'X';
+                board[i][j] = '.';
             }
         }
         nQueens(board, 0);
