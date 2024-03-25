@@ -1,3 +1,4 @@
+package BackTracking;
 public class NqueensOneSolution7 {
         // checking safe positions funstion
             public static boolean isSafe(char board[][], int row, int col) {

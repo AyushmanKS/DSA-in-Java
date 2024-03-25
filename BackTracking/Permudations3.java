@@ -1,4 +1,5 @@
 // find all possible permudations of a string: example) for abc: length 3-> permudations= 3! = 3*2*1 = 6
+package BackTracking;
 public class Permudations3 {
     public static void permudations(String str, String ans) {
         // base case

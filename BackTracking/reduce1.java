@@ -1,5 +1,5 @@
 // reduce every element of array by 2
-
+package BackTracking;
 public class reduce1 {
 
     public static void changeArray(int arr[], int i, int val) {

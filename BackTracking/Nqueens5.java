@@ -1,3 +1,4 @@
+package BackTracking;
 public class Nqueens5 {
 
 // checking safe positions funstion

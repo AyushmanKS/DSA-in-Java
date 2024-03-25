@@ -1,5 +1,5 @@
 // Finding subsets of a String n = 2^n
-
+package BackTracking;
 public class Subsets2 {
     public static void findSubsets(String str, String ans, int i) {
         // base case

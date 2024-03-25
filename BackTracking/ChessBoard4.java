@@ -1,4 +1,5 @@
 // pinting all posibilites of placing 2 queens in 2*2 chess board
+package BackTracking;
 public class ChessBoard4 {
 
     public static void nQueens(char board[][], int row) {

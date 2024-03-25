@@ -1,3 +1,4 @@
+package BackTracking;
 public class Sudoku9 {
     // is safe funciotn
     public static boolean isSafe(int sudoku[][], int row, int col, int n) {
