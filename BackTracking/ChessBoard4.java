@@ -12,7 +12,7 @@ public class ChessBoard4 {
         for(int j=0; j<board.length; j++) {
             board[row][j] = 'Q';
             nQueens(board, row+1); // function call: recursion
-            board[row][j] = '.'; // backtracking 
+            board[row][j] = 'X'; // backtracking 
         }
     }
 
