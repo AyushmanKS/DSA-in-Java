@@ -1,7 +1,6 @@
 package BackTracking;
 
-public class checkInclusion10 {
-
+public class CheckInclusion10 {
     public static boolean permuteAndCheck(String s1, String ans, String s2) {
         // Base case
         if (s1.length() == 0) {
@@ -37,4 +36,6 @@ public class checkInclusion10 {
             System.out.println("false");
         }
     }
+
+
 }
