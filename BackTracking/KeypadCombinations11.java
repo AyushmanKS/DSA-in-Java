@@ -15,20 +15,6 @@ public class KeypadCombinations11 {
         "wxyz"  // 9
     };
 
-    public static void main(String args[]) {
-        String digits1 = "23";
-        System.out.println("Sample Input 1 : " + digits1);
-        System.out.print("Sample Output 1 : ");
-        letterCombinations(digits1);
-        System.out.println();
-
-        String digits2 = "2";
-        System.out.println("Sample Input 2 : " + digits2);
-        System.out.print("Sample Output 2 : ");
-        letterCombinations(digits2);
-        System.out.println();
-    }
-
     public static void letterCombinations(String digits) {
         if (digits == null || digits.length() == 0) {
             return;
@@ -49,5 +35,19 @@ public class KeypadCombinations11 {
         for (int i = 0; i < letters.length(); i++) {
             generateCombinations(digits, current + letters.charAt(i), index + 1);
         }
+    }
+
+    public static void main(String args[]) {
+        String digits1 = "23";
+        System.out.println("Sample Input 1 : " + digits1);
+        System.out.print("Sample Output 1 : ");
+        letterCombinations(digits1);
+        System.out.println();
+
+        String digits2 = "2";
+        System.out.println("Sample Input 2 : " + digits2);
+        System.out.print("Sample Output 2 : ");
+        letterCombinations(digits2);
+        System.out.println();
     }
 }
