@@ -24,7 +24,7 @@ public class FirstUpperCase28 {
     }
     public static void main(String args[]) {
         
-        String str = "hi, i am ayushman";
+        String str = "hi, i am ayushman kumar singh.";
 
         System.out.println(toUpperCase(str));
     }
