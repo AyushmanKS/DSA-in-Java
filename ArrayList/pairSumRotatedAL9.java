@@ -2,7 +2,7 @@ package ArrayList;
 
 import java.util.ArrayList;
 
-public class pairSumRotatedAL9 {
+public class PairSumRotatedAL9 {
     
     public static boolean pairSum(ArrayList<Integer> list, int target) {
         // breaking point: pivot
