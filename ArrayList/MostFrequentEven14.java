@@ -14,7 +14,7 @@ public class MostFrequentEven14 {
         int currentElement = -1;
 
         for (int i = 0; i < n; i++) {
-            if (arr[i] % 2 == 0) { // Only consider even numbers
+            if (arr[i] % 2 == 0) { 
                 if (arr[i] == currentElement) {
                     currentCount++;
                 } else {
