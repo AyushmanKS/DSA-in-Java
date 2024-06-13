@@ -11,11 +11,13 @@ public class BeautifulArrayList15 {
         for(int i=2; i<=n; i++) {
             ArrayList<Integer>temp = new ArrayList<>();
             for(Integer e: ans) {
+                // for obtaining even number
                 if(2*e <=n) {
                     temp.add(e*2);
                 }
             }
             for(Integer e: ans) {
+                // for obtaining odd number
                 if(2*e - 1 <= n) {
                     temp.add(e*2 - 1);
                 }
