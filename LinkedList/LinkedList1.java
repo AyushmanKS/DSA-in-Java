@@ -38,11 +38,28 @@ public class LinkedList1 {
         tail = newNode;
     }
 
+    public void print() {
+        if(head == null) {
+            System.out.println("LL is empty");
+            return;
+        }
+        Node temp = head;
+        while(temp!=null) {
+            System.out.print(temp.data+"->");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
     public static void main(String args[]) {
         LinkedList1 ll = new LinkedList1();
+        ll.print();
         ll.addFirst(2);
+        ll.print();
         ll.addFirst(1);
+        ll.print();
         ll.addLast(3);
+        ll.print();
         ll.addLast(4);
+        ll.print();
     }
 }
