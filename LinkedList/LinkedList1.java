@@ -127,6 +127,23 @@ public class LinkedList1 {
         }
         return -1;
     }
+    
+    public int helper(Node head, int key) {
+        if(head == null) {
+            return -1;
+        }
+        if(head.data == key) {
+            return 0;
+        }
+        int idx = helper(head.next, key);
+        if(idx == -1) {
+            return -1;
+        }
+        return idx+1;
+    }
+    public int recursiveSearch(int key) {
+        return helper(head, key);
+    }
     public static void main(String args[]) {
         LinkedList1 ll = new LinkedList1();
         ll.print();
@@ -142,6 +159,7 @@ public class LinkedList1 {
         //ll.removeLast();
         ll.print(); 
         System.out.println("Size of LinkedList: "+size); 
-        System.out.println("Element found at index: "+ll.iterativeSearch(3));  
+        System.out.println("Element found at index: "+ll.iterativeSearch(3));
+        System.out.println("Element found at index: "+ll.recursiveSearch(3));  
     }
 }
