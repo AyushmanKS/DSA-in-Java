@@ -144,6 +144,20 @@ public class LinkedList1 {
     public int recursiveSearch(int key) {
         return helper(head, key);
     }
+    
+    public void reverse() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while(curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
     public static void main(String args[]) {
         LinkedList1 ll = new LinkedList1();
         ll.print();
@@ -161,5 +175,7 @@ public class LinkedList1 {
         System.out.println("Size of LinkedList: "+size); 
         System.out.println("Element found at index: "+ll.iterativeSearch(3));
         System.out.println("Element found at index: "+ll.recursiveSearch(3));  
+        ll.reverse();
+        ll.print();
     }
 }
