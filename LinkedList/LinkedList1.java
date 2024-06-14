@@ -113,6 +113,20 @@ public class LinkedList1 {
         size--;
         return val;
     }
+    
+    public int iterativeSearch(int key) {
+        Node temp = head;
+        int i = 0;
+
+        while(temp != null) {
+            if(temp.data == key) {
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -1;
+    }
     public static void main(String args[]) {
         LinkedList1 ll = new LinkedList1();
         ll.print();
@@ -124,9 +138,10 @@ public class LinkedList1 {
         ll.print();
         ll.addLast(4);
         ll.add(2, 10);
-        ll.removeFirst();
-        ll.removeLast();
+        //ll.removeFirst();
+        //ll.removeLast();
         ll.print(); 
-        System.out.println("Size of LinkedList: "+size);   
+        System.out.println("Size of LinkedList: "+size); 
+        System.out.println("Element found at index: "+ll.iterativeSearch(3));  
     }
 }
