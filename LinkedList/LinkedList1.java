@@ -180,24 +180,57 @@ public class LinkedList1 {
         prev.next = prev.next.next;
         return;
     }
+
+    public Node findMid(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+   
+    public boolean checkPalindrome() {
+        if(head == null || head.next == null) {
+            return true;
+        }
+        // 1. find mid
+        Node midNode = findMid(head);
+
+        // 2. reverse 2nd half
+        Node prev = null;
+        Node curr = midNode;
+        Node next;
+        while(curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node right = prev; 
+        Node left = head;
+
+        // 3. check left and right half
+        while(right != null) {
+            if(left.data != right.data) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+        return true;
+
+    }
     public static void main(String args[]) {
         LinkedList1 ll = new LinkedList1();
         ll.print();
-        ll.addFirst(2);
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(2);
+        ll.addLast(0);
         ll.print();
-        ll.addFirst(1);
-        ll.print();
-        ll.addLast(3);
-        ll.print();
-        ll.addLast(4);
-        ll.add(2, 10);
-        //ll.removeFirst();
-        //ll.removeLast();
-        ll.print(); 
-        System.out.println("Size of LinkedList: "+size); 
-        System.out.println("Element found at index: "+ll.iterativeSearch(3));
-        System.out.println("Element found at index: "+ll.recursiveSearch(3));  
-        ll.deleteNthfromEnd(3);
-        ll.print();
+        System.out.println(ll.checkPalindrome());
     }
 }
