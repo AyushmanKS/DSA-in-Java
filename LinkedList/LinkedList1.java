@@ -223,14 +223,30 @@ public class LinkedList1 {
         return true;
 
     }
+
+    // Floyd's Cycle finding algorithm
+    public boolean isCycle() {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast!=null && fast.next!=null) {
+            slow = slow.next; //+1
+            fast = fast.next.next; //+2
+            if(slow == fast) {
+                return true; // cycle exists
+            }
+        }
+        return false; // cycle doesn't exist
+    }
     public static void main(String args[]) {
         LinkedList1 ll = new LinkedList1();
         ll.print();
         ll.addLast(1);
         ll.addLast(2);
         ll.addLast(2);
-        ll.addLast(0);
+        ll.addLast(1);
         ll.print();
         System.out.println(ll.checkPalindrome());
+        System.out.println(ll.isCycle());
     }
 }
