@@ -43,11 +43,11 @@ public class ZigZag4 {
     }
     public static void main(String args[]) {
         LinkedList1 ll = new LinkedList1();
-        ll.addFirst(1);
-        ll.addFirst(2);
-        ll.addFirst(3);
-        ll.addFirst(4);
-        ll.addFirst(5);
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.addLast(5);
 
         ll.print();
         ZigZag4 zz = new ZigZag4();
