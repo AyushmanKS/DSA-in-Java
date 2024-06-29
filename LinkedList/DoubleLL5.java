@@ -16,7 +16,7 @@ public class DoubleLL5 {
     public static Node tail;
     public static int size;
 
-    // add
+    // addFirst
     public void addFirst(int data) {
         Node newNode = new Node(data);
         size++;
@@ -28,6 +28,25 @@ public class DoubleLL5 {
         head.prev = newNode;
         head = newNode;
     }    
+    // removeLast
+    public int removeFirst() {
+        if(head == null) {
+            System.out.println("DLL is empty"); 
+            return Integer.MIN_VALUE;
+        }
+        if(size == 1) {
+            int val = head.data;
+            head = tail = null;
+            size--;
+            return val;
+        }
+
+        int val = head.data;
+        head = head.next;
+        head.prev = null;
+        size--;
+        return val;
+    }
     // print
     public void print() {
         Node temp = head;
@@ -43,6 +62,8 @@ public class DoubleLL5 {
         dll.addFirst(3);
         dll.addFirst(2);
         dll.addFirst(1);
+        dll.print();
+        dll.removeFirst();
         dll.print();
     }
 }
