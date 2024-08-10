@@ -15,6 +15,7 @@ public class secondLargestGFG {
         }
         System.out.println(min);
         System.out.println(max);
+        
         for (int i = 0;i < arr.length;i++) {
 		if (arr[i] > second_large && arr[i] != max)
 		    {
