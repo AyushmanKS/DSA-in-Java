@@ -35,8 +35,12 @@ public class RotateAray {
 
     public static void main(String args[]) {
         int arr[] = {1,2,3,4,5,6,7};
+        int l = arr.length;
+        int k=2;
+        k = k % l;
+        
         //rotateToLeft(arr, 2);
-        rotateToRight(arr, 2);
+        rotateToRight(arr, k);
 
         System.out.print("After Rotating the k elements: ");
         for (int i = 0; i < arr.length; i++) {
