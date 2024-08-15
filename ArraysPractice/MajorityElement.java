@@ -6,9 +6,11 @@ public class MajorityElement {
         int n = v.length;
         for (int i = 0; i < n; i++) {
             //selected element is v[i]
+            System.out.println("i = "+i);
             int cnt = 0;
             for (int j = 0; j < n; j++) {
                 // counting the frequency of v[i]
+                System.out.println("j = "+j);
                 if (v[j] == v[i]) {
                     cnt++;
                 }
@@ -22,7 +24,7 @@ public class MajorityElement {
         return -1;
     }
     public static void main(String args[]) {
-        int arr[] = {3,2,32};
+        int arr[] = {3,2,3};
         System.out.println(majorityElement(arr));
     }
 }
