@@ -3,8 +3,8 @@ package Stacks;
 import java.util.ArrayList;
 
 // implementing stack using arrayList
-public class Stack {
-    static class StackA {
+public class StackA {
+    static class StackArrayList {
         static ArrayList<Integer> list = new ArrayList<>();
         
         // is no element return true
@@ -34,7 +34,7 @@ public class Stack {
         } 
     }
     public static void main(String args[]) {
-        StackA s = new StackA();
+        StackArrayList s = new StackArrayList();
 
         s.push(1);
         s.push(2);
