@@ -1,7 +1,7 @@
 package Stacks;
 
 import java.util.Stack;
-
+// push at bottom of the Stack
 public class StackC {
     public static void pushAtBottom(Stack<Integer> s, int data) {
         if(s.isEmpty()) {
