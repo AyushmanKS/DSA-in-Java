@@ -13,7 +13,7 @@ public class ReverseString {
         for(int i=0; i<str.length(); i++) {
             s.push(str.charAt(i));
         }
-        // pop elements out of stack and stoe in result
+        // pop elements out of stack and store in result
         StringBuilder result = new StringBuilder("");
         while(!s.isEmpty()) {
             char curr = s.pop();
