@@ -17,7 +17,7 @@ public class NextGreater {
             while (!s.isEmpty() && s.peek() <= arr[i]) {
                 s.pop();
             }
-            // if stack is empty no grater elemen exists, therefore put -1
+            // if stack is empty no greater element exists, therefore put -1
             if (s.isEmpty()) {
                 nextGreater[i] = -1;
             } else {
