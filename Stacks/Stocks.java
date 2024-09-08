@@ -9,6 +9,7 @@ public class Stocks {
     public static void stockSpan(int stocks[], int span[]) {
         Stack<Integer> s = new Stack<>();
         span[0] = 1;
+        // pushed 0 since its initial index
         s.push(0);
 
         for(int i=0; i<stocks.length; i++) {
