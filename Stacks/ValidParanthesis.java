@@ -25,12 +25,7 @@ public class ValidParanthesis {
                 }
             }
         }
-        if(st.isEmpty()) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return st.isEmpty();
     }
 
     public static void main(String args[]) {

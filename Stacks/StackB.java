@@ -49,16 +49,15 @@ public class StackB {
         }
     }
     public static void main(String args[]) {
-         StackLL s = new StackLL();
 
-        s.push(1);
-        s.push(2);
-        s.push(3);
-        s.push(4);
+        StackLL.push(1);
+        StackLL.push(2);
+        StackLL.push(3);
+        StackLL.push(4);
 
-        while(!s.isEmpty()) {
-            System.out.println(s.peek());
-            s.pop();
+        while(!StackLL.isEmpty()) {
+            System.out.println(StackLL.peek());
+            StackLL.pop();
         }
     }
 }

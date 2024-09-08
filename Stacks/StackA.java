@@ -34,16 +34,15 @@ public class StackA {
         } 
     }
     public static void main(String args[]) {
-        StackArrayList s = new StackArrayList();
 
-        s.push(1);
-        s.push(2);
-        s.push(3);
-        s.push(4);
+        StackArrayList.push(1);
+        StackArrayList.push(2);
+        StackArrayList.push(3);
+        StackArrayList.push(4);
 
-        while(!s.isEmpty()) {
-            System.out.println(s.peek());
-            s.pop();
+        while(!StackArrayList.isEmpty()) {
+            System.out.println(StackArrayList.peek());
+            StackArrayList.pop();
         }
     }
     
