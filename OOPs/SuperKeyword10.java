@@ -2,7 +2,7 @@ package OOPs;
 
 public class SuperKeyword10 {
     public static void main(String args[]) {
-        Horse h = new Horse();
+        //Horse h = new Horse();
     }
 }
 class Animal {
