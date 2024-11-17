@@ -1,3 +1,4 @@
+// must be a soretd array
 public class BinarySearch {
     
     public static int binarySearch(int nums[], int key) {
