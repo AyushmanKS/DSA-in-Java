@@ -9,6 +9,11 @@ public class Height {
             this.right = null;
         }
     }
+
+    public static int countNodes(Node root) {
+        if(root == null) return 0;
+        return countNodes(root.left) + countNodes(root.right) + 1;
+    }
     
     public static int height(Node root) {
         if(root == null) {
@@ -35,5 +40,6 @@ public class Height {
         root.right.right = new Node(7);
 
         System.out.println(height(root));
+        System.out.println(countNodes(root));
     }
 }
