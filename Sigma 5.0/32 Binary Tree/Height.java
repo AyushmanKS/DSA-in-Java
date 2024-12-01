@@ -10,6 +10,18 @@ public class Height {
         }
     }
 
+    public static int diameter(Node root) {
+        if(root == null) return 0;
+        int lh = height(root.left);
+        int rh = height(root.right);
+
+        int ld = height(root.left);
+        int rd = height(root.right);
+
+        int selfDiameter = lh + rh + 1;
+        return Math.max(selfDiameter, Math.max(ld, rd));        
+    }
+
     public static int countNodes(Node root) {
         if(root == null) return 0;
         return countNodes(root.left) + countNodes(root.right) + 1;
@@ -39,7 +51,8 @@ public class Height {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        System.out.println(height(root));
-        System.out.println(countNodes(root));
+        System.out.println("Height of tree is: "+height(root));
+        System.out.println("Number od nodes are: "+countNodes(root));
+        System.out.println("diameter of tree is: "+diameter(root));
     }
 }
