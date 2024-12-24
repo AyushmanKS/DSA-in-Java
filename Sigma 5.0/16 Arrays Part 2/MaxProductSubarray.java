@@ -1,3 +1,6 @@
+// Input: nums = [2,3,-2,4]
+// Output: 6
+// Explanation: [2,3] has the largest product 6.
 public class MaxProductSubarray {
     public int maxProduct(int[] nums) {
         int n = nums.length;
