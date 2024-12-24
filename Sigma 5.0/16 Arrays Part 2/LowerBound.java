@@ -6,18 +6,31 @@ public class LowerBound {
         int low = 0;
         int high = n - 1;
 
+        // while(low <= high) {
+        //     int mid = low + (high - low)/2;
+
+        //     if(arr[mid] == k) {
+        //         return mid;
+        //     }
+        //     if(arr[mid] < k) {
+        //         ans = mid;
+        //         low = mid + 1;
+        //     }
+        //     else {
+        //         high = mid - 1;
+        //     }
+        // }
+
+        // 2nd method
         while(low <= high) {
             int mid = low + (high - low)/2;
 
-            if(arr[mid] == k) {
-                return mid;
-            }
-            if(arr[mid] < k) {
+            if(arr[mid] >= k) {
                 ans = mid;
-                low = mid + 1;
+                high = mid - 1;
             }
             else {
-                high = mid - 1;
+                low = mid + 1;
             }
         }
         return ans;
