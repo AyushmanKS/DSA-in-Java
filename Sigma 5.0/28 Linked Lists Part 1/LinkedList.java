@@ -50,6 +50,13 @@ public class LinkedList {
         temp.next = newNode;
     }
 
+    public void removeFirst() {
+        if(head == null) {
+            System.out.println("LL is empty");
+        } 
+        head = head.next;
+    }
+
     public void printLL() {
         Node temp = head;
         while(temp != null) {
@@ -57,6 +64,7 @@ public class LinkedList {
             temp = temp.next;
         }
         System.out.print("null");
+        System.out.println();
     }
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();
@@ -68,6 +76,8 @@ public class LinkedList {
 
         ll.add(0, 2);
 
+        ll.printLL();
+        ll.removeFirst();
         ll.printLL();
     }    
 }
