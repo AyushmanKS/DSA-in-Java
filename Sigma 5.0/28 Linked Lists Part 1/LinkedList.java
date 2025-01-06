@@ -57,6 +57,20 @@ public class LinkedList {
         head = head.next;
     }
 
+    public void reverseLL() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while(curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
     public void printLL() {
         Node temp = head;
         while(temp != null) {
@@ -77,7 +91,8 @@ public class LinkedList {
         ll.add(0, 2);
 
         ll.printLL();
-        ll.removeFirst();
+        //ll.removeFirst();
+        ll.reverseLL();
         ll.printLL();
     }    
 }
