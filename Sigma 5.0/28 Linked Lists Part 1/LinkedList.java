@@ -71,6 +71,29 @@ public class LinkedList {
         head = prev;
     }
 
+    public void deleteNthNodefromEnd(int n) {
+        int size = 0;
+        Node temp = head;
+        while(temp != null) {
+            temp = temp.next;
+            size++;
+        }
+        // removing first node/head
+        if(n == size) {
+            head = head.next;
+            return;
+        }
+        int i = 1;
+        int iToFind = size - n;
+        Node prev = head;
+        while(i < iToFind) {
+            prev = prev.next;
+            i++;
+        }
+        prev.next  = prev.next.next;
+        return;
+    }
+
     public void printLL() {
         Node temp = head;
         while(temp != null) {
