@@ -112,6 +112,34 @@ public class LinkedList {
         return false;
     }
 
+    public static void removeCycle() {
+        Node slow = head;
+        Node fast = head;
+        boolean exists = false;
+
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast == slow) {
+                exists = true;
+                break;
+            }
+        }
+        if(exists == false) {
+            return;
+        }
+
+        slow = head;
+        Node prev = null;
+        
+        while(slow != fast) {
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+        prev.next = null;
+    }
+
     public void printLL() {
         Node temp = head;
         while(temp != null) {
