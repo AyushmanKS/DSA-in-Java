@@ -158,6 +158,30 @@ public class LinkedList {
         odd.next = evenHead;
         return head;
     }
+
+    public Node addOne(Node head) {
+        // code here.
+        int val = head.data;
+
+        for(Node temp = head.next; temp != null; temp = temp.next) {
+            val = (val * 10)+temp.data;   
+        }
+        val+=1;
+        
+        Node newHead = new Node(val % 10);
+        val /= 10;
+        
+        Node current = newHead;
+        
+        // converting updated value to LL
+        while (val > 0) {
+            Node newNode = new Node(val % 10);
+            newNode.next = current;
+            current = newNode;
+            val /= 10;
+        }
+        return current;
+    }
     
     public void printLL() {
         Node temp = head;
