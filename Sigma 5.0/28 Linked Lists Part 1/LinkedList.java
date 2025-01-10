@@ -183,6 +183,19 @@ public class LinkedList {
         return current;
     }
     
+    public Node getIntersectionNode(Node headA, Node headB) {
+        if (headA == null || headB == null) return null;
+        
+        Node pointerA = headA;
+        Node pointerB = headB;
+
+        while (pointerA != pointerB) {
+            pointerA = (pointerA == null) ? headB : pointerA.next;
+            pointerB = (pointerB == null) ? headA : pointerB.next;
+        }
+        return pointerA;
+    }
+    
     public void printLL() {
         Node temp = head;
         while(temp != null) {
