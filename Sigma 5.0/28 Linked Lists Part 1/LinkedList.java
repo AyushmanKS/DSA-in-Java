@@ -226,6 +226,29 @@ public class LinkedList {
         return head;
     }
 
+    public Node rotateLL(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+    
+        // Initialize pointers to traverse the list
+        Node secondLast = null;
+        Node last = head;
+    
+        // Traverse the list to find the second last and last node
+        while (last.next != null) {
+            secondLast = last;
+            last = last.next;
+        }
+    
+        secondLast.next = null; // Remove the link from the second last node to the last node
+        last.next = head;       // Point the last node to the original head
+        head = last;            // Update the head to the last node
+    
+        return head;
+    }
+    
+
     public void printLL() {
         Node temp = head;
         while(temp != null) {
