@@ -196,6 +196,36 @@ public class LinkedList {
         return pointerA;
     }
     
+    public Node rotateRight(Node head, int k) {
+        if(head == null || head.next == null || k == 0) return head;
+
+        int length = 1;
+        Node tail = head;
+        while(tail.next != null) {
+            tail = tail.next;
+            length++;
+        }
+
+        k %= length;
+        if (k == 0) return head;
+
+        // Connect tail to head to form a circular linked list
+        tail.next = head;
+
+        // Find the new tail position: (length - k - 1)th node
+        int stepsToNewTail = length - k;
+        Node newTail = head;
+        for (int i = 1; i < stepsToNewTail; i++) {
+            newTail = newTail.next;
+        }
+
+        // Break the circular link and set the new head
+        head = newTail.next;
+        newTail.next = null;
+
+        return head;
+    }
+
     public void printLL() {
         Node temp = head;
         while(temp != null) {
@@ -215,9 +245,6 @@ public class LinkedList {
 
         ll.add(0, 2);
 
-        ll.printLL();
-        //ll.removeFirst();
-        ll.reverseLL();
         ll.printLL();
     }    
 }
