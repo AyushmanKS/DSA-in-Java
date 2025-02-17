@@ -25,6 +25,17 @@ class BST {
         return root;
     }
 
+    public static boolean search(Node root, int key) {
+        if (root == null) return false;
+    
+        if (root.data == key) return true;
+    
+        if (root.data > key) return search(root.left, key);
+        
+        return search(root.right, key); 
+    }
+    
+
     public static void inorder(Node root) {
         if(root == null) return;
 
@@ -44,5 +55,7 @@ class BST {
 
         inorder(root);
         System.out.println();
+
+        System.out.println("4 is present is binary search tree: "+ search(root, 4));
     }
 }
