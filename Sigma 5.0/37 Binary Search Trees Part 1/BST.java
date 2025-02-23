@@ -35,7 +35,6 @@ class BST {
         return search(root.right, key); 
     }
     
-
     public static void inorder(Node root) {
         if(root == null) return;
 
