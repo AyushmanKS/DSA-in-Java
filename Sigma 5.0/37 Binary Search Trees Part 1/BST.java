@@ -44,6 +44,29 @@ class BST {
         inorder(root.right);
     }
 
+    public static int closestElement(Node root, int K) {
+        if (root == null) return -1;
+
+        Node closest = root; 
+
+        while (root != null) {
+
+            if (root.data == K) return root.data;
+            
+            // Update closest if current node is closer to K
+            if (Math.abs(root.data - K) < Math.abs(closest.data - K)) {
+                closest = root;
+            }
+
+            // Move left if K is smaller, right if K is greater
+            if (K < root.data) {
+                root = root.left;
+            } else {
+                root = root.right;
+            }
+        }
+        return closest.data;
+    }
     public static void main(String args[]) {
         int values[] = {5,1,3,4,2,7};
         Node root = null;
@@ -56,5 +79,7 @@ class BST {
         System.out.println();
 
         System.out.println("4 is present is binary search tree: "+ search(root, 4));
+
+        System.out.println("Closest Element: "+closestElement(root, 0));
     }
 }
