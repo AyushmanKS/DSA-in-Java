@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Set;
 
 public class HashMaps {
     public static void main(String args[]) {
@@ -10,16 +11,19 @@ public class HashMaps {
 
         System.out.println(hm);
 
-        System.out.println(hm.get("China"));
+        // System.out.println(hm.get("China"));
 
-        System.out.println(hm.containsKey("India"));
+        // System.out.println(hm.containsKey("India"));
 
-        System.out.println(hm.remove("China"));
-        System.out.println(hm);
+        // System.out.println(hm.remove("China"));
+        // System.out.println(hm);
 
-        System.out.println(hm.size());
+        // System.out.println(hm.size());
         
-        hm.clear();
-        System.out.println(hm.isEmpty());
+        // hm.clear();
+        // System.out.println(hm.isEmpty());
+
+        Set<String> keys = hm.keySet();
+        System.out.println(keys);
     }
 }
