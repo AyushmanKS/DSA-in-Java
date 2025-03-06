@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Graphs {
     
@@ -13,8 +15,29 @@ public class Graphs {
             this.wt = w;
         }
     }
+
+    public static void bfs(ArrayList<Edge>[] graph) {
+        Queue<Integer> q = new LinkedList<>();
+        boolean vis[] = new boolean[graph.length];
+
+        q.add(0);
+
+        while(!q.isEmpty()) {
+            int curr = q.remove();
+
+            if(!vis[curr]) {
+                System.out.print(curr + " ");
+                vis[curr] = true;
+                for(int i=0; i<graph[curr].size(); i++) {
+                    Edge e = graph[curr].get(i);
+                    q.add(e.dest);
+                }
+            }
+        }
+    }
     public static void main(String args[]) {
         int V = 5;
+        @SuppressWarnings("unchecked")
         ArrayList<Edge>[] graph = new ArrayList[V];
 
         for(int i=0; i<V; i++) {
@@ -34,6 +57,8 @@ public class Graphs {
         graph[3].add(new Edge(3, 1, 3));
         graph[3].add(new Edge(3, 2, 1));
         // 4 vertex
-        graph[4].add(new Edge(3, 2, 1));        
+        graph[4].add(new Edge(4, 2, 1));        
+
+        bfs(graph);
     }
 }
