@@ -49,6 +49,21 @@ public class Graphs {
             }
         }
     }
+
+    public static boolean hasPath(ArrayList<Edge>[] graph, int src, int dest, boolean visited[]) {
+        if(src == dest) return true;
+
+        visited[src] = true;
+
+        for(int i=0; i<graph[src].size(); i++) {
+            Edge e = graph[src].get(i);
+            if(!visited[e.dest] && hasPath(graph, e.dest, dest, visited)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String args[]) {
         int V = 5;
         @SuppressWarnings("unchecked")
@@ -78,6 +93,10 @@ public class Graphs {
         System.out.println();
 
         dfs(graph, 0, new boolean[V]);
+
+        System.out.println();
+
+        System.out.println("Has Path: "+hasPath(graph, 0, 3, new boolean[V]));
 
     }
 }
