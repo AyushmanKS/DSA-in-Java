@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
+// No cycle exixts - Bipartrite true
+// Even Cycle - Bipartrite true
+// Odd Cycle - Bipartrite false
+
 public class BipartiteGraph {
     static class Edge {
         int src, dest;
